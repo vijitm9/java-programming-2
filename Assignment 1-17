@@ -1,0 +1,154 @@
+Q 1 
+Data Structure is collection of data values the relationships among them, and the functions or operations that can be applied to the data.. It is a data organizatio management,
+and storage format that enables efficient access and modification.
+  
+  
+  
+Q 2
+Some of the data structures and its applications are as follows:
+1. Arrays : Arrays are the simplest data structures that stores items of the same data type in a continuous memory location.
+Its application are as follows:
+	i)Arrangement of leader-board of a game can be done simply through arrays to store the score and arrange them in descending order to clearly make out the rank of each
+  player in the game.
+	ii)A simple question Paper is an array of numbered questions with each of them assigned to some marks.
+2. Linked List : A linked list is a sequence data structure, which connects elements, called nodes, through links.
+Its applications are as follows :
+	i)Web pages can be accessed using the previous and the next URL links which are linked using linked list.
+	ii)The music players also use the same technique to switch between music.
+3. Stacks : A stack is a data structure which uses LIFO order.
+Its applications are as follows :
+	i)Converting infix to postfix expressions.
+	ii)Undo operation is also carried out through stacks.
+4. Queue : A queue is a data structure which uses FIFO order.
+Its applications are as follows :
+	i)Operating System uses queue for job scheduling.
+	ii)To handle congestion in networking queue can be used.    
+  
+ 
+ 
+Q 3
+Advantages of linked lists over arrays are:
+1)Less Memory wastage due to dynamic memory allocation: The size of the arrays is fixed: So we must know the upper limit on the number of elements in advance. Also, generally, the allocated memory is equal to the upper limit irrespective of the usage, and in practical uses, upper limit is rarely reached.
+2)Insertion and deletion is easy in linked list : Insertion/deletion  of an element at beginning in a linked list is O(1) operation while in array it is O(n).
+
+
+
+Q 4
+struct node
+{  
+    int data;  
+    struct node *next;  
+};   
+
+
+
+Q 5
+Each node of a doubly linked lists have two pointers which contains the address of both previous and next node. Due to this it has its own usages over singly linked list.
+1) It is can be used to implement stacks as well as heaps and binary trees whereas Singly linked list are generally used for implementation of stacks.
+2) It allows two way traversal.
+
+
+
+Q 6
+An Array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the 
+same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base 
+value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
+A Stack is a linear data structure in which elements can be inserted and deleted only from one side of the list, called the top.
+A stack follows the LIFO (Last In First Out) principle, i.e., the element inserted at the last is the first element to come out.
+The insertion of an element into the stack is called push operation, and the deletion of an element from 
+the stack is called pop operation. In stack, we always keep track of the last element present in the list with a pointer called top.
+
+
+
+Q 7
+2 queues. one is used for storing data... another is used for priorities. Priority queues r applied using 2-D array where it has two rows one for element and second for priority
+,so minimum numbers of queues are needed to implement are two.
+
+
+
+Q 8
+Inorder Traversal : Inorder Traversal is the one the most used variant of DFS(Depth First Search) Traversal of the tree. In this method the left subtree of a node is visited
+first, then the node is visited and then the right subtree is visited.These  steps are repeated recursively until all the nodes are visited.
+Preorder Traversal : Preorder Traversal is another variant of DFS. In this method the node is visited first, then the left  subtree of the node is visited and then the right
+subtree of the node is visited.These steps are repeated recursively until all  the nodes are visited.
+Postorder Traversal: It is opposite of preorder. In this method the left subtree of node is visited first, then the right subtree  of the node is visited and then  node is
+visited.These steps are repeated recursively until all the nodes are visited.
+Level Order Traversal :  Level order traversal follows BFS(Breadth-First Search) to visit/modify every node of the tree.  In this method  we will visit all the nodes present at
+the same level one-by-one from left to right and then move to the next level to visit all the nodes of that level
+
+
+
+Q 9
+A binary tree is made of nodes, where each node contains a "left" pointer, a "right" pointer, and a data element. The "root" pointer points to the topmost node in the 
+tree. The left and right pointers recursively point to smaller "subtrees" on either side. A null pointer represents a binary tree with no elements -- the empty tree. The formal
+recursive definition is: a binary tree is either empty (represented by a null pointer), or is made of a single node, where the left and right pointers (recursive definition
+ahead) each point to a binary tree.
+A binary search tree (BST) or "ordered binary tree" is a type of binary tree where the nodes are arranged in order: for each node, all elements in its left subtree are less 
+the node, and all the elements in its right subtree are greater than the node.
+
+
+
+Q 10
+In Computer science graphs are used to represent the flow of computation.
+Google maps uses graphs for building transportation systems, where intersection of two(or more) roads are considered to be a vertex and the road connecting two vertices is
+considered to be an edge, thus their navigation system is based on the algorithm to calculate the shortest path between two vertices.
+In Facebook, users are considered to be the vertices and if they are friends then there is an edge running between them. Facebook’s Friend suggestion algorithm uses graph
+theory. Facebook is an example of undirected graph.
+In World Wide Web, web pages are considered to be the vertices. There is an edge from a page u to other page v if there is a link of page v on page u. This is an example of
+Directed graph. It was the basic idea behind Google Page Ranking Algorithm.
+In Operating System, we come across the Resource Allocation Graph where each process and resources are considered to be vertices. Edges are drawn from resources to the allocated
+process, or from requesting process to the requested resource. If this leads to any formation of a cycle then a deadlock will occur.
+
+
+
+Q 11
+Yes, Binary search is possible on the linked list if the list is sorted and you know the count of elements in list.
+
+
+
+Q 12
+Memory leak occurs when programmers create a memory in heap and forget to delete it.Memory leaks are particularly serious issues for programs like daemons and servers which by
+definition never terminate.
+
+
+
+Q 13
+If a node is a left child, then its key and the keys of the nodes in its right subtree are less than its parent’s key.
+If a node is a right child, then its key and the keys of the nodes in its left subtree are greater than its parent’s key.
+
+
+
+Q 14
+Stack is the best to perform recursion operation . Because of its LIFO (Last In First Out) property it remembers its ‘caller’ so knows whom to return when the function has to
+return. Recursion makes use of system stack for storing the return addresses of the function calls.
+
+
+
+Q 15
+Expression Handling : The stack can be used to convert some infix expression into its postfix equivalent, or prefix equivalent. These postfix or prefix notations are used in
+ computers to express some expressions. These expressions are not so much familiar to the infix expression, but they have some great advantages also. We do not need to maintain
+ operator ordering, and parenthesis. After converting into prefix or postfix notations, we have to evaluate the expression to get the result. For that purpose, also we need the
+ help of stack data structure.
+Backtracking : Backtracking is one of the algorithm designing technique. For that purpose, we dive into some way, if that way is not efficient, we come back to the previous
+ state and go into some other paths. To get back from current state, we need to store the previous state. For that purpose, we need stack. Some examples of backtracking is
+ finding the solution for Knight Tour problem or N-Queen Problem etc.
+Recursion : Recursion is a process where a function iteratively calls itself until a base case is reached. An example of recursion is finding the fatorial of a number.
+
+
+
+Q 16
+Expression : a+b*(c^d-e)^(f+g*h)-i
+Postfix : abcd^e-fgh*+^*+i-
+Prefix : +a-*b^-^cde+f*ghi
+
+
+
+Q 17
+To sort a stack using a temporary stack follow the following algorithm :
+Create a temporary stack say tmpStack.
+While input stack is NOT empty do this:
+	i) Pop an element from input stack call it temp
+	ii) while temporary stack is NOT empty and top of temporary stack is greater than temp,
+	pop from temporary stack and push it to the input stack
+	iii) push temp in temporary stack
+The sorted numbers are in tmpStack
