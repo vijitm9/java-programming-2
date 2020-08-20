@@ -1,0 +1,383 @@
+Q 18
+public class Answer18 {
+ 
+    static Queue<Integer> reverseQueue(Queue<Integer> q) 
+    { 
+         
+        if (q.isEmpty()) 
+            return q; 
+      
+        int data = q.peek(); 
+        q.remove(); 
+        q = reverseQueue(q);  
+        q.add(data); 
+              
+        return q; 
+    } 
+    
+	public static void main(String[] args) {
+		 Queue<Integer> queue = new LinkedList<Integer>(); 
+		     
+		    queue.add(5); 
+		    queue.add(4); 
+		    queue.add(3); 
+		    queue.add(2); 
+		    queue.add(1); 
+		    queue = reverseQueue(queue); 
+		    for(Integer e : queue)
+		    {
+		    	System.out.println(e);
+		    }
+		}
+    
+    
+    
+    
+    
+    
+Q 19
+import java.util.LinkedList; 
+import java.util.Queue; 
+import java.util.Stack; 
+
+public class Queue_reverse { 
+
+    static Queue<Integer> queue; 
+
+
+    static void Print() 
+    { 
+        while (!queue.isEmpty()) { 
+            System.out.print( queue.peek() + ", "); 
+            queue.remove(); 
+        } 
+    } 
+
+
+    static void reversequeue() 
+    { 
+        Stack<Integer> stack = new Stack<>(); 
+        while (!queue.isEmpty()) { 
+            stack.add(queue.peek()); 
+            queue.remove(); 
+        } 
+        while (!stack.isEmpty()) { 
+            queue.add(stack.peek()); 
+            stack.pop(); 
+        } 
+    } 
+
+
+    public static void main(String args[]) 
+    { 
+        queue = new LinkedList<Integer>(); 
+        queue.add(10); 
+        queue.add(20); 
+        queue.add(30); 
+        queue.add(40); 
+        queue.add(50); 
+        queue.add(60); 
+        queue.add(70); 
+        queue.add(80); 
+        queue.add(90); 
+        queue.add(100); 
+
+        reversequeue(); 
+        Print(); 
+    } 
+}
+
+	}
+  
+  
+  
+  
+  
+Q 20
+public class Answer {
+	class Node { 
+        int data; 
+        Node next; 
+        Node(int d) 
+        { 
+            data = d; 
+            next = null; 
+        } 
+	}
+	
+        Node head;
+        void printNthFromLast(int n) 
+        { 
+            int len = 0; 
+            Node temp = head; 
+            while (temp != null) { 
+                temp = temp.next; 
+                len++; 
+            } 
+      
+            if (len < n) 
+                return; 
+      
+            temp = head; 
+            for (int i = 1; i < len - n + 1; i++) 
+                temp = temp.next; 
+      
+            System.out.println(temp.data); 
+        } 
+        public void push(int new_data) 
+        { 
+        	if(head==null)
+        	{
+        		head=new Node(new_data);
+        	}
+            Node temp=head;
+            while(temp.next!=null)
+            	temp=temp.next;
+            temp.next=new Node(new_data);
+        }
+
+	public static void main(String[] args) {
+		Answer slist = new Answer(); 
+	        slist.push(20); 
+	        slist.push(4); 
+	        slist.push(15); 
+	        slist.push(35); 
+	 
+	        slist.printNthFromLast(3); 
+
+	}
+
+}
+
+
+
+
+Q 21
+class LinkedList { 
+	static Node head; 
+	static class Node { 
+		int data; 
+		Node next; 
+		Node(int d) 
+		{ 
+			data = d; 
+			next = null; 
+		} 
+	} 
+	Node reverse(Node node) 
+	{ 
+		Node prev = null; 
+		Node current = node; 
+		Node next = null; 
+		while (current != null) { 
+			next = current.next; 
+			current.next = prev; 
+			prev = current; 
+			current = next; 
+		} 
+		node = prev; 
+		return node; 
+	}  
+	void printList(Node node) 
+	{ 
+		while (node != null) { 
+			System.out.print(node.data + " "); 
+			node = node.next; 
+		} 
+	} 
+	public static void main(String[] args) 
+	{ 
+		LinkedList list = new LinkedList(); 
+		list.head = new Node(85); 
+		list.head.next = new Node(15); 
+		list.head.next.next = new Node(4); 
+		list.head.next.next.next = new Node(20); 
+		System.out.println("Given Linked list"); 
+		list.printList(head); 
+		head = list.reverse(head); 
+		System.out.println(""); 
+		System.out.println("Reversed linked list "); 
+		list.printList(head); 
+	} 
+} 
+
+
+
+
+Q 22
+public class Answer22 {
+	static void changeArr(int[] input) 
+    { 
+        
+        int newArray[] = Arrays.copyOfRange(input, 0,input.length); 
+  
+        
+        Arrays.sort(newArray); 
+        int i; 
+        
+        Map<Integer, Integer> rank = new HashMap<>(); 
+  
+        int rank = 1; 
+  
+        for (int index = 0; 
+             index < newArray.length; 
+             index++) { 
+  
+            int element = newArray[index]; 
+  
+            if (ranks.get(element) == null) { 
+  
+                ranks.put(element, rank); 
+                rank++; 
+            } 
+        } 
+        for (int index = 0; 
+             index < input.length; 
+             index++) { 
+  
+            int element = input[index]; 
+            input[index] = ranks.get(input[index]); 
+         
+        } 
+    } 
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("ENter size of input array");
+		int n= sc.nextInt();
+		int array[]=new int[n];
+		System.out.println("Enter Array elements");
+		for(int i=0;i<n;i++)
+		{
+			array[i]=sc.nextInt();
+		}
+		changeArr(array);
+		System.out.println("required array is\n ");
+		for(int e : array)
+		{
+			System.out.print(e+" ");
+		}
+
+	}
+
+}
+
+
+
+
+Q 23
+class Graph 
+{ 
+    private int V; 
+    private LinkedList<Integer> adj[];
+  
+    Graph(int v) 
+    { 
+        V = v; 
+        adj = new LinkedList[v]; 
+        for (int i=0; i<v; ++i) 
+            adj[i] = new LinkedList(); 
+    } 
+   
+    void addEdge(int v,int w) 
+    { 
+        adj[v].add(w); 
+        adj[w].add(v); 
+    } 
+  
+     
+    Boolean isCyclicUtil(int v, Boolean visited[], int parent) 
+    { 
+        visited[v] = true; 
+        Integer i; 
+        Iterator<Integer> it = adj[v].iterator(); 
+        while (it.hasNext()) 
+        { 
+            i = it.next(); 
+            if (!visited[i]) 
+            { 
+                if (isCyclicUtil(i, visited, v)) 
+                    return true; 
+            }  
+            else if (i != parent) 
+               return true; 
+        } 
+        return false; 
+    } 
+  
+    
+    Boolean isTree() 
+    {
+        Boolean visited[] = new Boolean[V]; 
+        for (int i = 0; i < V; i++) 
+            visited[i] = false; 
+        if (isCyclicUtil(0, visited, -1)) 
+            return false;
+        for (int u = 0; u < V; u++) 
+            if (!visited[u]) 
+                return false; 
+  
+        return true; 
+    } 
+}
+class Answer23 {
+	public static void main(String[] args) { 
+        Graph g1 = new Graph(5); 
+        g1.addEdge(1, 0); 
+        g1.addEdge(0, 2); 
+        g1.addEdge(0, 3); 
+        g1.addEdge(3, 4); 
+        if (g1.isTree()) 
+            System.out.println("Graph is Tree"); 
+        else
+            System.out.println("Graph is not Tree"); 
+  
+        Graph g2 = new Graph(5); 
+        g2.addEdge(1, 0); 
+        g2.addEdge(0, 2); 
+        g2.addEdge(2, 1); 
+        g2.addEdge(0, 3); 
+        g2.addEdge(3, 4); 
+  
+        if (g2.isTree()) 
+            System.out.println("Graph is Tree"); 
+        else
+            System.out.println("Graph is not Tree"); 
+	}
+}
+
+
+
+
+Q 24
+class Answer24 {
+	static int kthsmallest(int arr[],int k)
+	{
+		Arrays.sort(arr);
+		return arr[k-1];
+	}
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("ENter size");
+		int n=sc.nextInt();
+		int array[]=new int[n];
+		System.out.println("ENter array");
+		for(int i=0;i<n;i++)
+		{
+			array[i]=sc.nextInt();
+		}
+		System.out.println("Enter k");
+		int K=sc.nextInt();
+		System.out.println(kthsmallest(array,K));
+	}
+
+}
+
+
+
+
+Q 25
+The idea is to perform BFS from one of given input vertex(u). At the time of BFS maintain an array of distance[n] and initialize it to zero for all vertices. Now, suppose during
+BFS, vertex x is popped from queue and we are pushing all adjacent non-visited vertices(i) back into queue at the same time we should update distance[i] = distance[x] + 1;.
+Finally distance[v] gives the minimum number of edges between u and v.
